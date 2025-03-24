@@ -25,6 +25,12 @@ mongoose
   .then(() => console.log("✅ Connected to MongoDB Atlas! 🚀"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
+  app.get('/', (req, res)=>{
+    res.send({
+    activeStatus:true,
+    error: false,
+    })
+    })
 
 app.use(express.json());
 app.use(
