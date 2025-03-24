@@ -40,7 +40,7 @@ const DriverDetails = () => {
             Back to List
           </Button>
         }
-        style={{ maxWidth: "600px", margin: "0 auto", borderRadius: "8px" }}
+        style={{ maxWidth: "600px", padding: "24px", margin: "0 auto", borderRadius: "8px" }}
       >
         <p><strong>Phone:</strong> {driver.phone}</p>
         <p><strong>Address:</strong> {driver.address}</p>

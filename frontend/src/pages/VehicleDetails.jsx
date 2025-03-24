@@ -42,7 +42,7 @@ const VehicleDetails = () => {
             Back to List
           </Button>
         }
-        style={{ maxWidth: "600px", margin: "0 auto", borderRadius: "8px", border: "1px solid #d9d9d9" }} // Added border
+        style={{ maxWidth: "600px", padding: "24px", margin: "0 auto", borderRadius: "8px", border: "1px solid #d9d9d9" }} // Added border
       >
         <p><strong>Make:</strong> {vehicle.make}</p>
         <p><strong>Model:</strong> {vehicle.model}</p>
