@@ -23,23 +23,27 @@ const Login = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const response = await axios.post("https://frolicking-valkyrie-e639a7.netlify.app/login", values);
-      
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/login`,
+        values
+      );
+  
       // ✅ Store Token and User Role in LocalStorage
       localStorage.setItem("token", response.data.token);
-      localStorage.setItem("role", response.data.role); // Store role for access control
-      
+      localStorage.setItem("role", response.data.role);
+  
       toast.success("Login Successful!");
-      
-      // ✅ Redirect Based on Role (Example)
+  
+      // ✅ Redirect Based on Role
       navigate("/dashboard");
-
+  
     } catch (error) {
       toast.error(error.response?.data?.error || "Login Failed!");
     } finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <div
