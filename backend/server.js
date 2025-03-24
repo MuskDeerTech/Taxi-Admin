@@ -29,8 +29,8 @@ mongoose
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://frolicking-valkyrie-e639a7.netlify.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: "*",
+    methods: ["POST"],
     credentials: true,
   })
 );
