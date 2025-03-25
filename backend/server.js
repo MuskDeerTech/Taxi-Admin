@@ -25,18 +25,12 @@ mongoose
   .then(() => console.log("✅ Connected to MongoDB Atlas! 🚀"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-  app.get('/', (req, res)=>{
-    res.send({
-    activeStatus:true,
-    error: false,
-    })
-    })
 
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
-    methods: ["POST"],
+    origin: "https://frolicking-valkyrie-e639a7.netlify.app", // ✅ your Netlify frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
