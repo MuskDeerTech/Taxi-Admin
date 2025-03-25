@@ -64,7 +64,7 @@ const RideEdit = () => {
   
       console.log("🔍 Sending PUT request:", updatedData);
   
-      const response = await axios.put(`${API_URL}/bookings/${id}`, updatedData, {
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/bookings/${id}`, updatedData, {
         headers: { Authorization: `Bearer ${token}` },
       });
   
