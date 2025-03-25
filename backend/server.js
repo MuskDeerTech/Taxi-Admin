@@ -28,9 +28,13 @@ mongoose
 
 app.use(express.json());
 app.use(cors({
-  origin: ['https://frolicking-valkyrie-e639a7.netlify.app'], // allow Netlify
-  credentials: true // if you're using cookies or auth headers
+  origin: 'https://frolicking-valkyrie-e639a7.netlify.app', // 👈 allow Netlify
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
 }));
+
+// Also handle preflight requests
+app.options('*', cors());
 
 // Initialize Razorpay
 const razorpay = new Razorpay({
