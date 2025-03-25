@@ -55,7 +55,6 @@ const RideEdit = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const token = localStorage.getItem("token");
       const updatedData = {
         ...values,
         date: values.date.format("YYYY-MM-DD"),
@@ -64,9 +63,10 @@ const RideEdit = () => {
   
       console.log("🔍 Sending PUT request:", updatedData);
   
-      const response = await axios.put(`${import.meta.env.VITE_API_URL}/bookings/${id}`, updatedData, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await axios.put(
+        `${import.meta.env.VITE_API_URL}/bookings/${id}`,
+        updatedData
+      );
   
       console.log("✅ Response:", response.data);
       message.success("Ride updated successfully!");
@@ -88,7 +88,7 @@ const RideEdit = () => {
     } finally {
       setLoading(false);
     }
-  };
+  };  
   
 
   if (loading) return <Spin size="large" style={{ display: "block", margin: "20px auto" }} />;
