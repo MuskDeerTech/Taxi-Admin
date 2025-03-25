@@ -26,7 +26,7 @@ const RideEdit = () => {
     try {
       const token = localStorage.getItem("token");
       console.log("Fetching ride details for ID:", id); // Debug log
-      const response = await axios.get(`${API_URL}/bookings/${id}`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/bookings/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
