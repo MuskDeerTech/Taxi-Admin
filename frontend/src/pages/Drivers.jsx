@@ -30,7 +30,7 @@ const Drivers = () => {
   const fetchDrivers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://157.245.101.161:5000/drivers"); // Updated endpoint
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/drivers`); // Updated endpoint
       setDrivers(response.data);
       setFilteredDrivers(response.data); // Initialize filtered data
     } catch (error) {

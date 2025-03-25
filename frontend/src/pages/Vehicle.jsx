@@ -29,7 +29,7 @@ const Vehicle = () => {
   const fetchVehicles = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://157.245.101.161:5000/vehicles");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/vehicles`);
       setVehicles(response.data);
       setFilteredVehicles(response.data); // Initialize filtered data
     } catch (error) {

@@ -14,7 +14,7 @@ const DriverRegistration = () => {
     console.log("Form values being sent:", values);
     setLoading(true);
     try {
-      await axios.post("http://157.245.101.161:5000/drivers-register", values);
+      await axios.post(`${import.meta.env.VITE_API_URL}/drivers-register`, values);
       toast.success("Driver registered successfully!");
       form.resetFields();
       navigate("/dashboard/drivers");

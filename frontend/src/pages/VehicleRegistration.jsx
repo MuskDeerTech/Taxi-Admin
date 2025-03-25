@@ -14,7 +14,7 @@ const VehicleRegistration = () => {
     console.log("Form values being sent:", values);
     setLoading(true);
     try {
-      await axios.post("http://157.245.101.161:5000/vehicles-register", values);
+      await axios.post(`${import.meta.env.VITE_API_URL}/vehicles-register`, values);
       toast.success("Vehicle registered successfully!");
       form.resetFields();
       navigate("/dashboard/vehicle");

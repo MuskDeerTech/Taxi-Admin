@@ -15,7 +15,7 @@ const RideEdit = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
 
-  const API_URL = import.meta.env.VITE_API_URL || "http://157.245.101.161:5000";
+  const API_URL = import.meta.env.VITE_API_URL || `${import.meta.env.VITE_API_URL}`;
 
   useEffect(() => {
     fetchRideDetails();

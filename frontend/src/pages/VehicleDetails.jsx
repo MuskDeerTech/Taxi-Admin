@@ -17,7 +17,7 @@ const VehicleDetails = () => {
   const fetchVehicleDetails = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://157.245.101.161:5000/vehicles/${id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/vehicles/${id}`);
       console.log("Vehicle Data:", response.data); // Debugging
       setVehicle(response.data);
     } catch (error) {

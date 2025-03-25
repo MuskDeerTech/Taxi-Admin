@@ -23,7 +23,7 @@ const UserRegistration = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      await axios.post("http://157.245.101.161:5000/register", values);
+      await axios.post(`${import.meta.env.VITE_API_URL}/register`, values);
       toast.success("User registered successfully!");
       form.resetFields();
       navigate("/dashboard");

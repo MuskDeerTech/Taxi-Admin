@@ -17,7 +17,7 @@ const DriverDetails = () => {
   const fetchDriverDetails = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://157.245.101.161:5000/drivers/${id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/drivers/${id}`);
       setDriver(response.data);
     } catch (error) {
       console.error("Error fetching driver details:", error);

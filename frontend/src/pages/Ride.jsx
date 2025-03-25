@@ -42,7 +42,7 @@ const Ride = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://157.245.101.161:5000/bookings", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/bookings`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
