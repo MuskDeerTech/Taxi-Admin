@@ -27,13 +27,12 @@ mongoose
 
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://frolicking-valkyrie-e639a7.netlify.app", // ✅ your Netlify frontend domain
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: '*', // ✅ Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false // ❌ Cannot use credentials with wildcard origin
+}));
 
 // Initialize Razorpay
 const razorpay = new Razorpay({
